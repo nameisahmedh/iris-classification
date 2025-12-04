@@ -107,15 +107,13 @@ def predict():
     except Exception as e:
         return jsonify({'error': f'Prediction failed: {str(e)}'}), 500
 
+# Load models when the module is imported (for gunicorn/production)
+load_all_models()
+
 if __name__ == '__main__':
     print("\n" + "="*50)
     print("IRIS CLASSIFICATION WEB APPLICATION")
     print("="*50)
-    
-    if not load_all_models():
-        print("\n⚠ WARNING: Models not loaded. Please train the models first.")
-        print("Run: python train_model.py\n")
-        exit(1)
     
     print("\n✓ Server starting...")
     print("✓ Home: http://127.0.0.1:5000")

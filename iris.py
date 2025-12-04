@@ -124,3 +124,6 @@ if __name__ == '__main__':
     print("="*50 + "\n")
     
     app.run(debug=True, host='127.0.0.1', port=5000)
+else:
+    # For Vercel deployment - load models when module is imported
+    load_all_models()

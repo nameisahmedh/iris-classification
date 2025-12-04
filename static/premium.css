@@ -1,0 +1,356 @@
+/* ============================
+   PREMIUM UI ENHANCEMENTS
+   Add-on styles for polish
+   ============================ */
+
+/* Gradient Enhancements */
+body {
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 50%, #e8f5e9 100%) !important;
+    background-attachment: fixed;
+}
+
+/* Hero Title Gradient */
+.hero h1 {
+    background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #4caf50 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+
+    0%,
+    100% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(10deg);
+    }
+}
+
+/* Enhanced CTA Buttons */
+.cta-button,
+.cta-button-large {
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%) !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.4) !important;
+}
+
+.cta-button::before,
+.cta-button-large::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button:hover::before,
+.cta-button-large:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover,
+.cta-button-large:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.5) !important;
+}
+
+/* Enhanced Cards with Gradients */
+.species-card,
+.info-card,
+.stat-box {
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.species-card::before,
+.stat-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2e7d32, #4caf50, #2e7d32);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.species-card:hover::before,
+.stat-box:hover::before {
+    opacity: 1;
+}
+
+.species-card:hover,
+.stat-box:hover,
+.info-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15) !important;
+    border-color: #2e7d32 !important;
+}
+
+/* Animated Numbers */
+.stat-value,
+.info-number {
+    background: linear-gradient(135deg, #2e7d32, #4caf50) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Enhanced Feature Numbers */
+.feature-number {
+    background: linear-gradient(135deg, #2e7d32, #1b5e20) !important;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-number {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
+}
+
+/* Section Headers with Underline */
+.about-section h2,
+.species-section h2,
+.features-section h2,
+.cta-section h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.about-section h2::after,
+.species-section h2::after,
+.features-section h2::after,
+.cta-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2e7d32, #4caf50);
+    border-radius: 2px;
+}
+
+/* Enhanced Predict Button */
+.predict-btn {
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%) !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.4) !important;
+}
+
+.predict-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.predict-btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.predict-btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.5) !important;
+}
+
+/* Result Cards Enhancement */
+.species-display,
+.confidence-section {
+    background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Smooth Stat Card Hover */
+.stat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Navigation Enhancement */
+.top-nav {
+    background: linear-gradient(to right, #ffffff 0%, #fafafa 100%) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Enhanced Input Focus */
+.input-field input:focus,
+select:focus {
+    box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+/* Emoji Float Animation */
+.hero-icon,
+.welcome-icon,
+.species-icon {
+    animation: float-smooth 4s ease-in-out infinite;
+    filter: drop-shadow(0 4px 12px rgba(46, 125, 50, 0.3));
+}
+
+@keyframes float-smooth {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Species Emoji Pulse on Hover */
+.species-emoji {
+    transition: transform 0.3s ease;
+}
+
+.species-card:hover .species-emoji {
+    transform: scale(1.15);
+    animation: pulse 0.6s ease;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Smooth Page Transitions */
+.home-container>section {
+    animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add delays for staggered effect */
+.hero {
+    animation-delay: 0s;
+}
+
+.about-section {
+    animation-delay: 0.1s;
+}
+
+.species-section {
+    animation-delay: 0.2s;
+}
+
+.features-section {
+    animation-delay: 0.3s;
+}
+
+.stats-section {
+    animation-delay: 0.4s;
+}
+
+.cta-section {
+    animation-delay: 0.5s;
+}
+
+/* Random Example Button Enhancement */
+.random-example-btn {
+    transition: all 0.3s ease !important;
+}
+
+.random-example-btn:hover {
+    background-color: #c8e6c9 !important;
+    transform: scale(1.02);
+    border-color: #2e7d32 !important;
+}
+
+/* Result Badge Glow */
+.result-badge {
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.4);
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 2px 8px rgba(46, 125, 50, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 16px rgba(46, 125, 50, 0.6);
+    }
+}
+
+/* Confidence Item Hover */
+.confidence-item {
+    transition: all 0.3s ease;
+}
+
+.confidence-item:hover {
+    transform: translateX(5px);
+    background-color: #c8e6c9 !important;
+}
+
+/* Loading Spinner Enhancement */
+.spinner {
+    box-shadow: 0 0 20px rgba(46, 125, 50, 0.3);
+}
+
+/* Add subtle animation to sections */
+@media (prefers-reduced-motion: no-preference) {
+
+    .species-card,
+    .feature-card,
+    .stat-box,
+    .info-card {
+        animation: fadeIn 0.6s ease;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

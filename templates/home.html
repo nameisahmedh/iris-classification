@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Classification - Home</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="home-page">
+    <div class="home-container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-icon">🌸</div>
+                <h1>Iris Flower Classification</h1>
+                <p class="hero-subtitle">Identify iris species using advanced machine learning</p>
+                <a href="/predict-page" class="cta-button">Let's Predict →</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2>What is Iris Classification?</h2>
+            <p class="about-text">
+                Iris classification is a classic machine learning problem that involves identifying
+                the species of iris flowers based on four key measurements: sepal length, sepal width,
+                petal length, and petal width.
+            </p>
+        </section>
+
+        <!-- Species Cards -->
+        <section class="species-section">
+            <h2>Three Iris Species</h2>
+            <div class="species-grid">
+                <div class="species-card">
+                    <div class="species-emoji">🌸</div>
+                    <h3>Iris Setosa</h3>
+                    <p>Characterized by smaller petals and wider sepals. Native to Alaska, Canada and northeastern USA.
+                    </p>
+                    <ul class="features-list">
+                        <li>Small petal length</li>
+                        <li>Wide sepals</li>
+                        <li>Easily distinguishable</li>
+                    </ul>
+                </div>
+
+                <div class="species-card">
+                    <div class="species-emoji">🌺</div>
+                    <h3>Iris Versicolor</h3>
+                    <p>Medium-sized flowers with moderate petal and sepal dimensions. Found in northeastern North
+                        America.</p>
+                    <ul class="features-list">
+                        <li>Medium size petals</li>
+                        <li>Balanced proportions</li>
+                        <li>Moderate features</li>
+                    </ul>
+                </div>
+
+                <div class="species-card">
+                    <div class="species-emoji">🌼</div>
+                    <h3>Iris Virginica</h3>
+                    <p>Largest flowers with long petals and sepals. Native to eastern United States coastal areas.</p>
+                    <ul class="features-list">
+                        <li>Large petal length</li>
+                        <li>Long sepals</li>
+                        <li>Most distinctive</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2>How It Works</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">1</div>
+                    <h3>Enter Measurements</h3>
+                    <p>Input four flower measurements in centimeters</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">2</div>
+                    <h3>Choose Model</h3>
+                    <p>Select from 5 different ML algorithms</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">3</div>
+                    <h3>Get Prediction</h3>
+                    <p>Receive species identification with confidence score</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Iris Species</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">ML Models</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">150</div>
+                    <div class="stat-label">Training Samples</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Measurements</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to Try It?</h2>
+            <p>Use our machine learning models to classify iris flowers instantly</p>
+            <a href="/predict-page" class="cta-button-large">Start Predicting Now</a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="home-footer">
+            <p>Built with Flask & Scikit-learn | © 2024 Iris Classifier</p>
+        </footer>
+    </div>
+</body>
+
+</html>

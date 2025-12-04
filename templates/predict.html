@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Classification - Predict</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="predict-page">
+    <!-- Navigation -->
+    <nav class="top-nav">
+        <a href="/" class="nav-logo">🌸 Iris Classifier</a>
+        <a href="/" class="nav-link">← Back to Home</a>
+    </nav>
+
+    <div class="split-container">
+        <!-- Left Panel: Input Form -->
+        <div class="left-panel">
+            <header class="panel-header">
+                <h1>Make a Prediction</h1>
+                <p class="subtitle">Enter flower measurements to identify the species</p>
+            </header>
+
+            <form id="predictionForm" class="input-form">
+                <div class="form-section">
+                    <h2>Flower Measurements</h2>
+
+                    <div class="input-row">
+                        <div class="input-field">
+                            <label>Sepal Length</label>
+                            <input type="number" id="sepal_length" step="0.1" min="0" max="10" placeholder="5.1"
+                                required>
+                            <span class="unit">cm</span>
+                        </div>
+                        <div class="input-field">
+                            <label>Sepal Width</label>
+                            <input type="number" id="sepal_width" step="0.1" min="0" max="10" placeholder="3.5"
+                                required>
+                            <span class="unit">cm</span>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-field">
+                            <label>Petal Length</label>
+                            <input type="number" id="petal_length" step="0.1" min="0" max="10" placeholder="1.4"
+                                required>
+                            <span class="unit">cm</span>
+                        </div>
+                        <div class="input-field">
+                            <label>Petal Width</label>
+                            <input type="number" id="petal_width" step="0.1" min="0" max="10" placeholder="0.2"
+                                required>
+                            <span class="unit">cm</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Model Selection</h2>
+                    <select id="model_select" name="model" required>
+                        <option value="">Choose a model...</option>
+                        <option value="Random Forest">Random Forest</option>
+                        <option value="SVM">Support Vector Machine</option>
+                        <option value="Decision Tree">Decision Tree</option>
+                        <option value="K-Nearest Neighbors">K-Nearest Neighbors</option>
+                        <option value="Naive Bayes">Naive Bayes</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="predict-btn">Predict Species</button>
+
+                <button type="button" class="random-example-btn" id="randomExampleBtn">
+                    <span>🎲</span> Try Random Example
+                </button>
+            </form>
+        </div>
+
+        <!-- Right Panel: Results & Info -->
+        <div class="right-panel">
+            <!-- Loading State -->
+            <div id="loading" class="result-container loading-state hidden">
+                <div class="spinner"></div>
+                <p>Analyzing...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="error" class="result-container error-state hidden">
+                <div class="error-icon">⚠️</div>
+                <p id="errorText">An error occurred</p>
+            </div>
+
+            <!-- Results -->
+            <div id="results" class="result-container hidden">
+                <div class="result-header">
+                    <h2>Prediction Result</h2>
+                    <div class="result-badge" id="confidenceBadge">High Confidence</div>
+                </div>
+
+                <div class="species-display">
+                    <div class="species-icon" id="speciesIcon">🌸</div>
+                    <h1 class="species-name" id="speciesName">Iris Setosa</h1>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Model</div>
+                        <div class="stat-value" id="modelUsed">Random Forest</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Model Accuracy</div>
+                        <div class="stat-value" id="modelAccuracy">96.67%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Confidence</div>
+                        <div class="stat-value" id="predictionConfidence">100%</div>
+                    </div>
+                </div>
+
+                <div class="confidence-section">
+                    <h3>Probability Distribution</h3>
+                    <div id="confidenceBreakdown" class="confidence-list"></div>
+                </div>
+            </div>
+
+            <!-- Initial Welcome State -->
+            <div id="welcomeState" class="result-container welcome-state">
+                <div class="welcome-content">
+                    <div class="welcome-icon">🌺</div>
+                    <h2>Ready to Predict</h2>
+                    <p>Enter flower measurements and select a model to identify the iris species.</p>
+
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="info-number">3</div>
+                            <div class="info-text">Species</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-number">5</div>
+                            <div class="info-text">Models</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-number">4</div>
+                            <div class="info-text">Features</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

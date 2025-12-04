@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: iris-classification
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn iris:app"
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0

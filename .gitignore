@@ -15,8 +15,9 @@ instance/
 .webassets-cache
 
 # Models and data (generated files)
-models/
-*.pkl
+# We now commit models for deployment
+# models/
+# *.pkl
 
 # IDE
 .vscode/

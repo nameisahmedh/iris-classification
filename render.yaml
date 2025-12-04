@@ -2,10 +2,6 @@ services:
   - type: web
     name: iris-classification
     env: python
-    runtime: python
     buildCommand: "pip install -r requirements.txt && python train_model.py"
     startCommand: "gunicorn iris:app"
     plan: free
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
